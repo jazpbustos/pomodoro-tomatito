@@ -3,7 +3,7 @@
   "version": "1.8.0",
   "description": "Un pequeño jardín para concentrarte",
   "main": "main.cjs",
-  "author": "Tomatito",
+  "author": "Jazmin Bustos",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
