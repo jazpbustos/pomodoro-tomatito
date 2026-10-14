@@ -1,0 +1,16 @@
+{
+  "name": "tomatito",
+  "version": "1.8.0",
+  "description": "Un pequeño jardín para concentrarte",
+  "main": "main.cjs",
+  "author": "Tomatito",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . Tomatito --platform=win32 --arch=x64 --out=../ --overwrite --icon=icon.ico"
+  },
+  "devDependencies": {
+    "electron": "44.7.2",
+    "@electron/packager": "20.3.0"
+  }
+}
