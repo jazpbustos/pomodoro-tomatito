@@ -1,0 +1,14 @@
+# Dependencias (se regeneran con npm install)
+node_modules/
+
+# Builds de la app
+out/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
