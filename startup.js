@@ -1,0 +1,2 @@
+// Reveal the completed space after fonts, scene sizing and the first layout frames.
+(async()=>{await document.fonts.ready;await new Promise(requestAnimationFrame);window.dispatchEvent(new Event('resize'));await new Promise(requestAnimationFrame);document.documentElement.classList.remove('booting');await new Promise(requestAnimationFrame);document.documentElement.dataset.appReady='true';window.desktop?.ready?.()})();
