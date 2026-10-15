@@ -1,78 +1,58 @@
-# 🍅 tomatito.
+# Tomatito 3.8
 
-Tu jardín de pequeños ratitos.
+Una aplicación de escritorio para concentrarte, trabajar y hacer pausas, con tres espacios: **Normal**, **Estudio** y **Work**.
 
-Tomatito es una app de escritorio para concentrarte con el método Pomodoro, acompañada por un jardín kawaii que crece con vos. Una semillita, un poquito de lluvia, rayitos de sol… y una plantita que florece al completar tu ciclo. 🌱
+## Espacios y tiempos
 
-## ✨ Funciones
+- Normal conserva el jardín y sus animaciones de crecimiento.
+- Estudio tiene un escritorio con lectura, escritura e investigación.
+- Work tiene una oficina con tipeo, revisión de documentos y videollamadas.
+- Los tres tienen ciclos reales: foco, descanso corto, descanso largo y cantidad de pomodoros configurables de forma independiente. Work comienza con 50 / 5 / 15 minutos y 4 pomodoros por ciclo.
+- Cada espacio tiene su colección de objetos, recompensas y animaciones. Las sugerencias aparecen en los descansos.
 
-- Temporizador con pausa, reanudación, reinicio y salto de intervalo.
-- Opción para reiniciar el ciclo completo.
-- Tiempos de concentración y descanso configurables.
-- Checklist de tareas: agregar, editar, completar y borrar.
-- Jardín con ilustraciones y animaciones.
-- Insignias y recompensas por completar pomodoros, ciclos y tareas.
-- 12 opciones por categoría: macetas, paisajes, decoraciones, mascotas, casitas y haditas.
-- Paisajes con lluvia, nieve, estrellas, aurora, playa, bosque y estanque.
-- Mini temporizador flotante y movible al minimizar la ventana.
-- Opción para mantener la ventana siempre visible.
-- Lofi Girl en directo y música alternativa sin conexión.
-- Campanita suave al terminar cada intervalo.
-- Guardado local del progreso, las tareas y los ajustes.
+## Notas por proyecto
 
-## ⏱️ A tu ritmo
+Cada modo tiene su propio cuaderno. Los proyectos agrupan notas con título, contenido, negrita, tachado, tareas, colores, fondos y adjuntos. La lista de títulos permite desplazarse y ordenar arrastrando. Se pueden fijar notas al reloj, archivar, restaurar y borrar con Deshacer.
 
-La configuración inicial es:
+Los cambios se guardan automáticamente y hay un botón Guardar. Cada nota se descarga como `.md` o `.txt`; los archivos adjuntos se descargan por separado.
 
-- 25 minutos de concentración.
-- 5 minutos de descanso corto.
-- 15 minutos de descanso largo.
-- 4 pomodoros por ciclo.
+## Música y mini
 
-Podés cambiar los tiempos y la cantidad de pomodoros desde Ajustes.
+Lo-fi en vivo se reproduce dentro de la misma ventana. También hay música y sonidos de ambiente sin conexión.
 
-## 🎁 Un jardín a tu medida
+Al minimizar aparece un mini flotante con Tomatito según el modo. En los descansos cambia a una tacita y muestra frases cortas cada 15 segundos. Su tamaño se mantiene estable, incluso con escalado de pantalla de Windows.
 
-Cada ratito de foco, ciclo completo y tarea terminada suma progreso.
+## Bandeja de Windows
 
-Las recompensas se desbloquean gradualmente, con las piezas más elaboradas hacia el final. Podés combinar una maceta, un paisaje, una decoración, una mascota, una casita y una hadita.
+Tomatito queda disponible junto al reloj. Un clic abre la ventana y el menú permite mostrar el mini, pausar/reanudar y salir. La X oculta la ventana en la bandeja; **Salir de Tomatito** cierra el programa.
 
-No hay rachas obligatorias. Tu jardín crece a tu ritmo. ♡
+La aplicación empaquetada para Windows activa el inicio en la bandeja al iniciar sesión. Se puede desactivar desde **Iniciar con Windows** en el menú del icono. Abrir otra vez el ejecutable recupera la misma ventana.
 
-## 🪟 Descargar y usar
+## Ejecutar desde el código
 
-Descargá la versión para Windows desde Releases, descomprimí la carpeta completa y abrí `Tomatito.exe`.
+Se necesita Node.js con npm. Desde esta carpeta:
 
-Mantené todos los archivos de la carpeta juntos: el ejecutable necesita sus archivos de acompañamiento.
+```sh
+npm ci
+npm start
+```
 
-## 🛠️ Ejecutar desde el código
+Las dependencias de Electron y el empaquetador están fijadas en `package.json`. El inicio automático con Windows solo se registra en la aplicación empaquetada.
 
-Necesitás Node.js y npm.
+Para generar la carpeta ejecutable de Windows:
 
-Desde la carpeta que contiene `package.json`:
+```sh
+npm run package
+```
 
-    npm install
-    npm start
+El resultado contiene el `.exe` y sus archivos necesarios. Hay que distribuir la carpeta completa, por ejemplo en un ZIP adjunto a una versión publicada de GitHub. Los binarios generados no forman parte del código fuente.
 
-Para generar la app de Windows:
+## Datos locales
 
-    npm run package
+En Windows, las notas, adjuntos, ajustes y progreso se guardan en `%APPDATA%\Tomatito-Estudio-Work`, fuera de la carpeta del programa. La aplicación original utiliza una carpeta de datos distinta. Las notas compartidas de versiones intermedias se conservan en Work al migrar a cuadernos independientes.
 
-## 🎨 Tecnologías
+Un reloj pausado conserva su tiempo al salir. Si estaba corriendo, al volver se descuenta el tiempo transcurrido; si el intervalo venció, se pasa al siguiente al abrir. Ocultar la ventana en la bandeja mantiene la aplicación ejecutándose.
 
-- Electron.
-- HTML, CSS y JavaScript.
-- Ilustraciones SVG y animaciones CSS.
-- Poppins y Darumadrop One.
+## Créditos y licencia
 
-## 🎵 Música y créditos
-
-La radio en directo pertenece a Lofi Girl y requiere conexión a internet.
-
-La alternativa sin conexión utiliza SakuraBeats Vol. 1, de Silvervale y Shanty Shark, bajo licencia Creative Commons Attribution 4.0. Las pistas se unieron con transiciones para formar una mezcla continua.
-
-Los créditos completos y las licencias correspondientes están incluidos en `music/CREDITS.txt` y en la carpeta de tipografías.
-
----
-
-Hecho de pequeños pasos, música suave y un tomatito con ganas de crecer. 🍅🌷
+Código bajo la licencia MIT del repositorio. Fuentes, música y sonidos conservan sus créditos y licencias dentro de `fonts/`, `music/` y `ambience/`.

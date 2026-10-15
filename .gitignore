@@ -12,3 +12,10 @@ npm-debug.log*
 # Archivos del sistema
 .DS_Store
 Thumbs.db
+# Ejecutables generados y datos personales
+Tomatito*/
+*_respaldo*/
+*.zip
+*.lnk
+startup-settings.json
+mini-position.json

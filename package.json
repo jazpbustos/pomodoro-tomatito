@@ -1,9 +1,9 @@
 {
   "name": "tomatito",
-  "version": "1.8.0",
-  "description": "Un pequeño jardín para concentrarte",
+  "version": "3.8.0",
+  "description": "Tomatito Normal, Estudio y Work con proyectos y cuadernos independientes",
   "main": "main.cjs",
-  "author": "Jazmin Bustos",
+  "author": "Tomatito",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
